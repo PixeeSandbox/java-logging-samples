@@ -1,0 +1,4 @@
+target/
+*.iml
+.idea/
+solr-home/products/data/

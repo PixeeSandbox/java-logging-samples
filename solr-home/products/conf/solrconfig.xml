@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <luceneMatchVersion>8.11.0</luceneMatchVersion>
+    <dataDir>${solr.data.dir:}</dataDir>
+    <schemaFactory class="ClassicIndexSchemaFactory"/>
+
+    <updateHandler class="solr.DirectUpdateHandler2"/>
+
+    <requestHandler name="/select" class="solr.SearchHandler">
+        <lst name="defaults">
+            <str name="df">name</str>
+        </lst>
+    </requestHandler>
+    <requestHandler name="/update" class="solr.UpdateRequestHandler"/>
+</config>
