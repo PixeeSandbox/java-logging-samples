@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{ISO8601} %-5level [%t] %c{1.} - %msg%n%throwable"/>
+        </Console>
+        <RollingFile name="File" fileName="logs/parcel-tracking.log"
+                     filePattern="logs/parcel-tracking-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d{ISO8601} %-5level [%t] %c{1.} - %msg%n%throwable"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>
